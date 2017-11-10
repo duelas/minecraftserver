@@ -15,7 +15,7 @@ EOF
   else
     mkdir -p world
     cd world
-	ftp -inv $HOST << EOF
+ftp -inv $HOST << EOF
 user $USER $PASS
 mget *
 bye
