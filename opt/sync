@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 HOST=22ftplink.ddns.net
 USER=admin
 PASS=22f_tplink
