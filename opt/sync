@@ -1,18 +1,21 @@
-#!/usr/bin/env bash
+#!/bin/bash
+HOST=22ftplink.ddns.net
+USER=admin
+PASS=22f_tplink
 
-if [ -n "$AWS_BUCKET" ]; then
-  cat << EOF > .s3cfg
-[default]
-access_key = ${AWS_ACCESS_KEY}
-secret_key = ${AWS_SECRET_KEY}
+
+
+  if [ -d world ]; then  
+    cd world
+ftp -inv $HOST << EOF
+user $USER $PASS
+cd 02DA-A3F3/mcworld/world/
+mput *
+bye
+
 EOF
-  if [ -d world ]; then
-    s3cmd sync world/ s3://${AWS_BUCKET}/world/
   else
     mkdir -p world
     cd world
-    s3cmd get --recursive s3://${AWS_BUCKET}/world/
-    cd ..
+wget -nH --cut-dirs=3 ftp://22ftplink.ddns.net/02DA-A3F3/mcworld/world/* --ftp-user="admin" --ftp-password="22f_tplink" -r
   fi
-  rm .s3cfg
-fi
