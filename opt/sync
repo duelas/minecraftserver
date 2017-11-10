@@ -1,4 +1,4 @@
-#!/usr/bin/ bash
+#!/usr/binbash
 HOST=22ftplink.ddns.net
 USER=guest
 PASS=guest
