@@ -5,7 +5,7 @@
     "games",
     "minecraft"
   ],
-  "repository": "https://github.com/jkutner/heroku-buildpack-minecraft",
+  "repository": "https://github.com/duelas/minecraftserver",
   "env": {
     "MINECRAFT_EULA": {
       "description": "Do you accept the Minecraft EULA?",
@@ -14,18 +14,6 @@
     "NGROK_API_TOKEN": {
       "description": "Your personal ngrok API token",
       "required": true
-    },
-    "AWS_BUCKET": {
-      "description": "S3 Bucket to store your server state (you will lose your games when the server restarts if you don't do this)",
-      "required": false
-    },
-    "AWS_ACCESS_KEY": {
-      "description": "The AWS access key for the S3 Bucket",
-      "required": false
-    },
-    "AWS_SECRET_KEY": {
-      "description": "The AWS secret key for the S3 Bucket",
-      "required": false
     }
   },
   "buildpacks": [
@@ -33,7 +21,7 @@
       "url": "https://github.com/heroku/heroku-buildpack-jvm-common"
     },
     {
-      "url": "https://github.com/kr/heroku-buildpack-inline.git"
+      "url": "https://github.com/anthonykarapetrides/heroku-buildpack-wget.git"
     }
   ]
 }
