@@ -19,5 +19,5 @@ EOF
 user $USER $PASS
 mget *
 bye
-EOFa
+EOF
   fi
