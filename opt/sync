@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/ bash
 HOST=22ftplink.ddns.net
 USER=guest
 PASS=guest
@@ -16,5 +16,5 @@ EOF
   else
     mkdir -p world
     cd world
-wget -nH --cut-dirs=1 ftp://22ftplink.ddns.net/* --ftp-user="guest" --ftp-password="guest" -r
+wget -nH --cut-dirs=1 ftp://$HOST/* --ftp-user=$USER --ftp-password=$PASS -r
   fi
