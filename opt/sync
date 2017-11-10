@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 HOST=22ftplink.ddns.net
-USER=admin
-PASS=22f_tplink
+USER=guest
+PASS=guest
 
 
 
@@ -9,7 +9,6 @@ PASS=22f_tplink
     cd world
 ftp -inv $HOST << EOF
 user $USER $PASS
-cd 02DA-A3F3/mcworld/world/
 mput *
 bye
 
@@ -17,5 +16,5 @@ EOF
   else
     mkdir -p world
     cd world
-wget -nH --cut-dirs=3 ftp://22ftplink.ddns.net/02DA-A3F3/mcworld/world/* --ftp-user="admin" --ftp-password="22f_tplink" -r
+wget -nH --cut-dirs=1 ftp://22ftplink.ddns.net/* --ftp-user="guest" --ftp-password="guest" -r
   fi
