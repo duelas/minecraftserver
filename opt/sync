@@ -15,5 +15,9 @@ EOF
   else
     mkdir -p world
     cd world
-wget -nH --cut-dirs=1 ftp://$HOST/* --user=$USER --password=$PASS -r
+	ftp -inv $HOST << EOF
+user $USER $PASS
+mget *
+bye
+EOFa
   fi
