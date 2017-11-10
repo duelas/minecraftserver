@@ -7,7 +7,7 @@ PASS=guest
 
   if [ -d world ]; then  
     cd world
-sudo ftp -inv $HOST << EOF
+ftp -inv $HOST << EOF
 user $USER $PASS
 mput *
 bye
@@ -15,5 +15,5 @@ EOF
   else
     mkdir -p world
     cd world
-sudo wget -nH --cut-dirs=1 ftp://$HOST/* --user=$USER --password=$PASS -r
+wget -nH --cut-dirs=1 ftp://$HOST/* --user=$USER --password=$PASS -r
   fi
