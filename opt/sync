@@ -1,23 +1,23 @@
-#!/usr/bin bash
-HOST=22ftplink.ddns.net
-USER=guest
-PASS=guest
-
-
+#!/bin/sh
+HOST='22ftplink.ddns.net'
+USER='guest'
+PASS='guest'
 
   if [ -d world ]; then  
     cd world
 ftp -inv $HOST << EOF
-user $USER $PASS
+quote USER $USER
+quote PASS $PASS
 mput *
-bye
+quit
 EOF
   else
     mkdir -p world
     cd world
 ftp -inv $HOST << EOF
-user $USER $PASS
+quote USER $USER
+quote PASS $PASS
 mget *
-bye
+quit
 EOF
   fi
