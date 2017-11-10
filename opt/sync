@@ -1,4 +1,4 @@
-#!/usr/bin bash
+#!/usr/bin/env bash
 HOST=22ftplink.ddns.net
 USER=guest
 PASS=guest
@@ -7,7 +7,7 @@ PASS=guest
 
   if [ -d world ]; then  
     cd world
-ftp -inv $HOST << EOF
+sudo ftp -inv $HOST << EOF
 user $USER $PASS
 mput *
 bye
@@ -15,5 +15,5 @@ EOF
   else
     mkdir -p world
     cd world
-wget -nH --cut-dirs=1 ftp://$HOST/* --user=$USER --password=$PASS -r
+sudo wget -nH --cut-dirs=1 ftp://$HOST/* --user=$USER --password=$PASS -r
   fi
