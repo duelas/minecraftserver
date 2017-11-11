@@ -2,7 +2,7 @@
 
   if [ -d world ]; then  
   jar -cf worldsync.zip world
-  curl --upload-file worldsync.zip 'https://transfer.sh/worldsync.zip' > transfer.log
+  curl --upload-file worldsync.zip 'https://transfer.sh/worldsync.zip' -o transfer.log
   else
   unzip world.zip
   fi
