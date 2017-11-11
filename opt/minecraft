@@ -20,7 +20,7 @@ bin/sync
 eval "while true; do sleep 600; bin/sync; done &"
 sync_pid=$!
 echo > bin/rqst.txt
-chmod 222 bin/rqst.txt
+chmod 777 bin/rqst.txt
 eval "while true; bin/rqstchk; done&"
 rqstchk_pid=$!
 
