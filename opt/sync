@@ -7,6 +7,5 @@ PASS='mcsync'
   jar -cf worldsync.zip world
   curl -T worldsync.zip 'ftp://22ftplink.ddns.net/mcworld'
   else
-  curl -u $USER:$PASS 'ftp://22ftplink.ddns.net/mcworld/world.zip'
   unzip world.zip
   fi
