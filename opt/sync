@@ -1,23 +1,12 @@
-#!/bin/sh
+#!/usr/bin/env bash
 HOST='22ftplink.ddns.net'
-USER='guest'
-PASS='guest'
+USER='mcsync'
+PASS='mcsync'
 
   if [ -d world ]; then  
-    cd world
-ftp -inv $HOST << EOF
-quote USER $USER
-quote PASS $PASS
-mput *
-quit
-EOF
+  jar -cf worldsync.zip world
+  curl -T worldsync.zip 'ftp://22ftplink.ddns.net/mcworld'
   else
-    mkdir -p world
-    cd world
-ftp -inv $HOST << EOF
-quote USER $USER
-quote PASS $PASS
-mget *
-quit
-EOF
+  curl -u $USER:$PASS 'ftp://22ftplink.ddns.net/mcworld/world.zip'
+  unzip world.zip
   fi
