@@ -2,7 +2,8 @@
 
   if [ -d world ]; then  
   jar -cf worldsync.zip world
-  curl --upload-file worldsync.zip https://transfer.sh/worldsync.zip > transfer.txt
+  curl --upload-file worldsync.zip https://transfer.sh/worldsync.zip >> transfer.txt
+  echo "Time: $(date)"
   else
   unzip world.zip
   fi
