@@ -6,8 +6,4 @@
 <% end %>
 World Map available at:
 <br />
-<% open('transfer.txt') do |list| %>
-	<% list.tail(60).each_line do |e| %>
-		<%= e.read %>
-	<% end %>
-<% end %>
+<%= open('transfer.txt').readlines[-25..-1]>
