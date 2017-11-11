@@ -6,8 +6,4 @@
 <% end %>
 World Map available at:
 <br />
-<% i = 0 %>
-<%= open('transfer.txt').foreach do i += 1 %>
-<% end %>
-<%= i %>
-<% end %>
+<%= open('transfer.txt').readlines.reverse.take(50) %>
