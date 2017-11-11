@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
   if [ -d world ]; then  
-  jar -cf worldsync.zip world
-  curl --upload-file worldsync.zip https://transfer.sh/worldsync.zip >> transfer.txt
-  echo -e "\nTime: $(date)" >> transfer.txt
-  else
-  unzip world.zip
+  jar -cfM worldsync.zip world
   fi
