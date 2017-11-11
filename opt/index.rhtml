@@ -4,7 +4,7 @@
 		<br />
 	<% end %>
 <% end %>
-<%= button_to "Sync Now", action: go => rqst.txt %>
+<%= button_to "Sync Now", action: <%= open('bin/rqst.txt').puts("go") %> %>
 World Map available at:
 <br />
 <br />
