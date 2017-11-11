@@ -5,6 +5,6 @@
   <% end %>
 <% end %>
 <% open('transfer.txt') do |map| %>
-    World Map available at: <%= puts map %>	
+    World Map available at: <%= map.read %>	
     <br />
 <% end %>
