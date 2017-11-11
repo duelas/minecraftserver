@@ -7,5 +7,6 @@
 World Map available at:
 <br />
 <% i = 0 %>
-<% open('transfer.txt').foreach do i += 1 %>
+<%= open('transfer.txt').foreach do i += 1 %>
 <%= i %>
+<% end %>
