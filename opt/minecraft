@@ -19,7 +19,7 @@ echo "Starting sync..."
 bin/sync
 eval "while true; do sleep 600; bin/sync; done &"
 sync_pid=$!
-
+echo > rqst.txt
 eval "while true; bin/rqstchk; done&"
 rqstchk_pid=$!
 
