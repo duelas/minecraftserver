@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
   if grep -q go rqst.txt; then  
-  echo > rqst.txt
   sync  
   fi
