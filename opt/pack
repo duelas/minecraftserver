@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
+#!/usr/bin bash
 
   if [ -d world ]; then  
-  jar -cfM worldsync.zip world
+  jar -cfMu worldsync.zip world
   fi
