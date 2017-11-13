@@ -1,5 +1,5 @@
 #!/usr/bin bash
 
   if [ -d world ]; then  
-  jar -cfMu worldsync.zip world
+  jar -cfMu public/worldsync.zip world
   fi
